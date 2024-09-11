@@ -21,9 +21,9 @@ const SignUp = () => {
 
     if (name === 'clubs') {
       const clubs = Array.from(selectedOptions, (option) => option.value);
-      setFormData({ ...formData, clubs }); // Update the selected clubs in formData
+      setFormData({ ...formData, clubs }); 
     } else {
-      setFormData({ ...formData, [name]: value }); // Update other form fields
+      setFormData({ ...formData, [name]: value });
     }
   };
 

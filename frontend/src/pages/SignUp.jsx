@@ -36,7 +36,7 @@ const SignUp = () => {
         data: formData
       });
       alert('Registration successful!');
-      localStorage.setItem('token', token);
+      localStorage.setItem('token', token.data);
       navigate('/'); 
 
       setFormData({
@@ -46,7 +46,7 @@ const SignUp = () => {
         clubs: [],
       });
     } catch (error) {
-      alert(eror);
+      alert(error);
     }
     console.log(JSON.stringify(formData));
   };

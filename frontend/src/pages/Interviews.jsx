@@ -1,4 +1,3 @@
-// src/pages/InterviewDashboard.js
 import React, { useState } from 'react';
 import RecentInterviews from './RecentInterviews';
 import PendingInterviews from './PendingInterviews'; 

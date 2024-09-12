@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 
 const ApplicantSchema = new mongoose.Schema({
   name: { type: String, required: true },
+  id: { type: String, required: true, unique: true },
   date: {type: String, required: true},
   time: {type: String, required: true},
   club: {type: String, required: true},

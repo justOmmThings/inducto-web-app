@@ -6,14 +6,14 @@ express().use(express.json());
 
 // Create a new interview
 router.post('/', async (req, res) => {
-  const { name, date, time, club, isCompleted } = req.body;
+  const { name, id, date, time, club, isCompleted } = req.body;
 
-  if (!name || !date || !time || !club) {
+  if (!name || !date || !time || !club || !id) {
     return res.status(400).json({ error: 'All fields are required' });
   }
   
   try {
-    const applicant = new Applicant({ name, date, time, club, isCompleted });
+    const applicant = new Applicant({ name, id, date, time, club, isCompleted });
     await applicant.save();
     res.status(201).json(applicant);
   } catch (error) {

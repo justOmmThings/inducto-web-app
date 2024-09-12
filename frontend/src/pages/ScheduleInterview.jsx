@@ -4,6 +4,7 @@ import axios from 'axios';
 const ScheduleInterview = () => {
   const [formData, setFormData] = useState({
     name: '',
+    id: '',
     date: '',
     time: '',
     club: '',
@@ -40,13 +41,14 @@ const ScheduleInterview = () => {
 
       setFormData({
         name: '',
+        id: '',
         date: '',
         time: '',
         club: '',
         isCompleted: false
       });
     } catch (error) {
-      alert('Error in Scheduling. Please try again.');
+      alert(error);
     }
   };
 
@@ -55,10 +57,10 @@ const ScheduleInterview = () => {
       <h1 className="text-2xl font-semibold mb-6">Schedule an Interview</h1>
 
       <form onSubmit={handleSubmit} className="space-y-6">
-        {/* Applicant Name Input */}
+        {/*Name Input */}
         <div>
           <label className="block text-lg font-medium text-gray-700 mb-2">
-            Applicant Name
+            Name
           </label>
           <input
             type="text"
@@ -66,7 +68,22 @@ const ScheduleInterview = () => {
             value={formData.name}
             onChange={handleChange}
             className="w-full p-3 border border-gray-300 rounded-md"
-            placeholder="Enter the applicant's name"
+            placeholder="Enter the name"
+            required
+          />
+        </div>
+        {/* {ID Input} */}
+        <div>
+          <label className="block text-lg font-medium text-gray-700 mb-2">
+            ID Number
+          </label>
+          <input
+            type="text"
+            name="id"
+            value={formData.id}
+            onChange={handleChange}
+            className="w-full p-3 border border-gray-300 rounded-md"
+            placeholder="Enter the ID"
             required
           />
         </div>

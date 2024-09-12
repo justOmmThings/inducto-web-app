@@ -28,7 +28,8 @@ const RecentInterviews = () => {
         <table className="min-w-full bg-white border border-gray-300 rounded-md">
           <thead>
             <tr className="border-b bg-gray-200">
-              <th className="p-4 text-left">Applicant</th>
+              <th className="p-4 text-left">Name</th>
+              <th className="p-4 text-left">ID</th>
               <th className="p-4 text-left">Date</th>
               <th className="p-4 text-left">Time</th>
               <th className="p-4 text-left">Club</th>
@@ -38,6 +39,7 @@ const RecentInterviews = () => {
             {interviews.map((interview) => (
               <tr key={interview.id} className="border-b">
                 <td className="p-4">{interview.name}</td>
+                <td className="p-4">{interview.id}</td>
                 <td className="p-4">{interview.date}</td>
                 <td className="p-4">{interview.time}</td>
                 <td className="p-4">{interview.club}</td>
